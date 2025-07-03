@@ -14,9 +14,10 @@ app.use(express.json());
 app.use('/api/tasks', taskRoutes);
 app.use('/api/users', userRoutes);
 
-// ✅ FIXED: Use 0.0.0.0 for Render & fallback PORT
-const PORT = process.env.PORT || 3000;
+// Use port from environment or fallback to 5000
+const PORT = process.env.PORT || 5000;
 
+// Connect to MongoDB and start server
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log("✅ MongoDB Connected");
@@ -25,4 +26,3 @@ mongoose.connect(process.env.MONGO_URI)
     });
   })
   .catch((err) => console.error("❌ MongoDB connection error:", err));
-
