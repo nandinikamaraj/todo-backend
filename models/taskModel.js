@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const taskSchema = new mongoose.Schema({
+const TaskSchema = new mongoose.Schema({
   title: String,
   description: String,
   status: String,
@@ -8,4 +8,4 @@ const taskSchema = new mongoose.Schema({
   ownerId: mongoose.Schema.Types.ObjectId,
   sharedWith: [mongoose.Schema.Types.ObjectId],
 });
-module.exports = mongoose.model('Task', taskSchema);
+module.exports = mongoose.model('Task', TaskSchema);

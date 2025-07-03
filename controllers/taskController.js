@@ -1,7 +1,7 @@
-const Task = require('../models/taskModel');
+const Task = require('../models/TaskModel');
 
 const getTasks = async (req, res) => {
-  const tasks = await Task.find();
+  const Tasks = await Task.find();
   res.json(tasks);
 };
 
